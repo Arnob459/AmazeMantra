@@ -7,6 +7,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\LoginController as AdminLoginController;
 use App\Http\Controllers\Auth\LoginController as UserLoginController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\VerificationController;
+
+
 
 use App\Http\Controllers\Admin\DashboardController ;
 
@@ -41,6 +45,7 @@ Route::get('/pass', [CheckUsernameController::class, 'pass'])->name('pass');
 
 
 
+//Admin
 
 Route::group(['prefix' => 'admin'],function(){
     Route::middleware(['is_admin_guest'])->group(function () {
@@ -57,9 +62,18 @@ Route::group(['prefix' => 'admin'],function(){
 
 });
 
+//User
+
 Route::group(['prefix' => 'user'],function(){
     Route::middleware(['guest'])->group(function () {
         //Your routes here
+        Route::get('/forgotpassword', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forgot.password');
+        Route::post('/forgotpassword', [ForgotPasswordController::class, 'showotp'])->name('show.otp');
+        Route::get('/createotp', [ForgotPasswordController::class, 'createotp'])->name('create.otp');
+        Route::post('/createotp', [ForgotPasswordController::class, 'otpConfirm'])->name('otp.confirm');
+        Route::get('/createnewpass', [ForgotPasswordController::class, 'createnewPass'])->name('createnew.pass');
+        Route::post('/createnewpass', [ForgotPasswordController::class, 'createPass'])->name('new.pass');
+
 
     });
 
@@ -78,6 +92,22 @@ Route::group(['prefix' => 'user'],function(){
 
 
 
+//   POST       email/resend  verification.resend › Auth\VerificationController@resend
+//   GET|HEAD   email/verify  verification.notice › Auth\VerificationController@show
+//   GET|HEAD   email/verify/{id}/{hash}  verification.verify › Auth\VerificationController@verify
+
+//   GET|HEAD   pass  pass › Auth\CheckUsernameController@pass
+//   GET|HEAD   password/confirm  password.confirm › Auth\ConfirmPasswordController@showConfirmForm
+//   POST       password/confirm  generated::JDJDPhR9RdH7BEQL › Auth\ConfirmPasswordController@confirm
+//   POST       password/email password.email › Auth\ForgotPasswordController@sendResetLinkEmail
+//   GET|HEAD   password/reset  password.request › Auth\ForgotPasswordController@showLinkRequestForm
+//   POST       password/reset  password.update › Auth\ResetPasswordController@reset
+//   GET|HEAD   password/reset/{token}  password.reset › Auth\ResetPasswordController@showResetForm
+
+
+
+
+
 
 
 
@@ -86,6 +116,9 @@ Route::group(['prefix' => 'user'],function(){
 
 
 Auth::routes();
+
+// Auth::routes(['verify' => true]);
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
