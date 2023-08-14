@@ -45,11 +45,12 @@ class PagesController extends Controller
 
         public function GenaralUpdate(Request $request){
 
+            $this->validate($request, [
+                'website_name' => 'required|string|max:255'
 
+            ]);
 
             $main = Page::first();
-
-            //home
             $main->website_name = $request->website_name;
 
             if($request->file('favicon')){
@@ -76,6 +77,12 @@ class PagesController extends Controller
 
     public function HomeUpdate(Request $request){
 
+        $this->validate($request, [
+            'home_title' => 'required|string|max:255',
+            'home_subtitle' => 'required|string|max:2048'
+
+        ]);
+
         $main = Page::first();
         $main->home_title = $request->home_title;
         $main->home_subtitle = $request->home_subtitle;
@@ -98,6 +105,12 @@ class PagesController extends Controller
         }
 
         public function AboutUpdate(Request $request){
+
+            $this->validate($request, [
+                'about_title' => 'required|string|max:255',
+                'about_substitle' => 'required|string|max:2048'
+
+            ]);
 
             $main = Page::first();
             $main->about_title = $request->about_title;
@@ -122,6 +135,15 @@ class PagesController extends Controller
         }
 
         public function BrandUpdate(Request $request){
+
+            $this->validate($request, [
+                'brand_title' => 'required|string|max:255',
+                'brand_subtitle' => 'required|string|max:2048',
+                'brand_mid_title' => 'required|string|max:255',
+                'brand_footer_title' => 'required|string|max:255',
+                'brand_footer_subtitle' => 'required|string|max:2048'
+
+            ]);
 
 
             $main = Page::first();
@@ -163,8 +185,6 @@ class PagesController extends Controller
             'title' => 'required|string|max:255',
             'point1' => 'required|string|max:2048',
 
-
-
         ]);
         $brandlist = new Brandlist;
         $brandlist->icon = $request->icon;
@@ -194,8 +214,6 @@ class PagesController extends Controller
         $brandlist->icon = $request->icon;
         $brandlist->title = $request->title;
         $brandlist->point1 = $request->point1;
-        $brandlist->point2 = $request->point2;
-        $brandlist->point3 = $request->point3;
         $brandlist->save();
 
         return redirect()->route('admin.brand.create')->with('success','Brandlist Updated Successfully');
@@ -217,6 +235,10 @@ class PagesController extends Controller
     }
 
     public function WorkStore(Request $request){
+
+        $this->validate($request, [
+            'work_title' => 'required|string|max:1048',
+        ]);
 
         $main = Page::first();
         $main->work_title = $request->work_title;
@@ -346,8 +368,6 @@ class PagesController extends Controller
         return view('admin.frontend.voucher.edit', compact('voucher'));
     }
     public function VoucherUpdate(Request $request, $id){
-
-
 
         $voucher = Voucher::find($id);
         $voucher->title = $request->title;
