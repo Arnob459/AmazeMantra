@@ -41,6 +41,9 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+U8fScJEdLk8Jl0r0cFFVaXh3V++p2Wp4+o7B4UquS4x1xj" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
     <!-- Page CSS -->
@@ -63,7 +66,7 @@
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
 
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Marketiah</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">AmazeMantra</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -81,68 +84,66 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item active">
-
-                {{-- <form action="{{ route('admin.logout') }}" method="post">
-                    @csrf
-                    <button class="submit"> logout</button>
-                </form> --}}
-                <a href="{{ route('admin.logout') }}" class="menu-link">
-                    <i class="menu-icon tf-icons bx bx-logout-circle"></i>
-                    <div data-i18n="Analytics">logout</div>
-                  </a>
 
 
+              <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Pages</span>
               </li>
 
 
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Category</span>
-            </li>
-            <li class="menu-item">
-              <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Add Category</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">All Category</div>
-              </a>
-            </li>
+              <li class="menu-item active">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons bx bx-layout"></i>
+                  <div data-i18n="Layouts">Layouts</div>
+                </a>
+            <ul class="menu-sub">
 
-            {{-- <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Sub Category</span>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('addsubcategory')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Add Sub Category</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('allsubcategory')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">All Sub Category</div>
-              </a>
-            </li>
+              <li class="menu-item active">
+                <a href="{{ route('admin.genaral.create') }}" class="menu-link">
+                  <div data-i18n="Analytics">Genaral Setting</div>
+                </a>
+              </li>
 
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Products</span>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('addproduct')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Add Product</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('allproducts')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">All Products</div>
-              </a>
-            </li> --}}
+              <li class="menu-item active">
+                <a href="{{ route('admin.home.create') }}" class="menu-link">
+                  <div data-i18n="Analytics">Banner</div>
+                </a>
+              </li>
+
+              <li class="menu-item active">
+                <a href="{{ route('admin.about.create') }}" class="menu-link">
+                  <div data-i18n="Analytics">About</div>
+                </a>
+              </li>
+
+              <li class="menu-item active">
+                <a href="{{ route('admin.brand.create') }}" class="menu-link">
+                  <div data-i18n="Analytics">Brand</div>
+                </a>
+              </li>
+
+              <li class="menu-item active">
+                <a href="{{ route('admin.work') }}" class="menu-link">
+                  <div data-i18n="Analytics">Work</div>
+                </a>
+              </li>
+
+              <li class="menu-item active">
+                <a href="{{ route('admin.voucher') }}" class="menu-link">
+                  <div data-i18n="Analytics">Voucher </div>
+                </a>
+              </li>
+
+              <li class="menu-item active">
+                <a href="{{ route('admin.contact') }}" class="menu-link">
+                  <div data-i18n="Analytics">Contact </div>
+                </a>
+              </li>
+
+        </ul>
+    </li>
+
+
 
             {{-- <li class="menu-header small text-uppercase">
               <span class="menu-header-text">SubAdmins</span>
@@ -281,7 +282,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="{{ route('admin.logout') }}">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -297,6 +298,7 @@
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
+
             @yield('content')
 
 

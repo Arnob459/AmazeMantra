@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>AmazeMantra</title>
+    <title>{{ $main->website_name }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="{{ asset('assets/img/favicon.ico') }}" rel="icon">
+    <link href="{{ $main->favicon }}" rel="icon">
 
 
 
@@ -41,21 +41,21 @@
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
+                <a href="" class="navbar-brand p-0">
 
-                   <img src="{{ asset('assets/img/logo.png') }}" alt="Logo">
+                   <img height="778" width="196" src="{{ $main->logo }}" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="index.html#about" class="nav-item nav-link">About</a>
-                        <a href="index.html#brand" class="nav-item nav-link">Brand Promotion</a>
-                          <a href="index.html#process" class="nav-item nav-link">Working Process</a>
-						     <a href="index.html#voucher" class="nav-item nav-link">Voucher</a>
-                        <a href="index.html#contact" class="nav-item nav-link">Contact</a>
+                        <a href="{{ route('index') }}" class="nav-item nav-link">Home</a>
+                        <a href="/#about" class="nav-item nav-link">About</a>
+                        <a href="/#brand" class="nav-item nav-link">Brand Promotion</a>
+                          <a href="/#process" class="nav-item nav-link">Working Process</a>
+						     <a href="/#voucher" class="nav-item nav-link">Voucher</a>
+                        <a href="/#contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <a href="{{ route('login') }}" class="btn btn-light rounded-pill  py-2 px-4 ms-lg-5">Sign In</a>
 					<a href="{{ route('register') }}" class="btn btn-light rounded-pill  py-2 px-4 ms-lg-5">Sign Up</a>
@@ -66,12 +66,12 @@
                 <div class="container">
                     <div class="row g-5 align-items-center">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="text-white mb-4 animated zoomIn">Amazemantra</h1>
-                            <h2 class="pb-3 animated text-green zoomIn">Amazemantra is a brand promotion company, working in this field from last many years. </h2>
+                            <h1 class="text-white mb-4 animated zoomIn">{{ $main->home_title }}</h1>
+                            <h2 class="pb-3 animated text-green zoomIn">{{ $main->home_subtitle }}</h2>
 
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="{{ asset('assets/img/hero.png') }}" alt="">
+                            <img class="img-fluid animated zoomIn" width="688" height="555" src="{{ $main->home_pic }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -85,15 +85,12 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="{{ asset('assets/img/about.png') }}">
+                        <img class="img-fluid" height="886" width="1075" src="{{ $main->about_pic }}">
                     </div>
                     <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
 
-                        <h2 class="mb-4">Amazemantra is a brand promotion company</h2>
-                        <p class="mb-4">We are a dynamic and innovative agency that specializes in taking brand to new heights. Our mission is to catapult the business into the spotlight, increasing visibility, and helping to connect with the target audience in a meaningful way.</p>
-						  <p class="mb-4">With a team of skilled professionals, we blend creativity and strategy to develop tailored brand promotion solutions that suit your specific needs and goals. Whether you're a start-up looking to make a splash in the market or an established company seeking to revitalize your brand image, we've got you covered.</p>
-						    <p class="mb-4">At our core, we believe in the power of storytelling and creating compelling narratives that resonate with your customers. Through a combination of digital marketing, social media engagement, influencer partnerships, and other cutting-edge techniques, we aim to build a loyal community of brand advocates who will champion your products or services.</p>
-							  <p class="mb-4">We pride ourselves on staying ahead of the curve, constantly monitoring industry trends and exploring emerging technologies to ensure that our clients remain at the forefront of their respective markets. By working with us, you can expect a transparent and collaborative approach, where your ideas and aspirations are valued, and our expertise guides you towards success.</p>
+                        <h2 class="mb-4">{{ $main->about_title }}</h2>
+                        <p class="mb-4">{{ $main->about_substitle }}</p>
 
 
                     </div>
@@ -111,14 +108,14 @@
 
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 
-                        <h2 class="mb-4">What is Brand Promotion?</h2>
-                        <p class="mb-4">Brand promotion is the way to inform, remind, persuade convincingly, and influence the consumers to drive their decision towards purchasing the product or service under a brand. Marketing force of a company conducts brand promotion primarily.</p>
+                        <h2 class="mb-4">{{ $main->brand_title }}</h2>
+                        <p class="mb-4">{{ $main->brand_subtitle }}</p>
 
 
 
                     </div>
 					<div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="{{ asset('assets/img/brandtwo.png') }}">
+                        <img class="img-fluid" height="1000" width="1000" src="{{ $main->brand_pic }}">
                     </div>
                 </div>
             </div>
@@ -131,28 +128,36 @@
         <div class="container-xxl py-6" >
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                     <h2 class="mb-5">Why Is Brand Promotion Important?</h2>
-
+                     <h2 class="mb-5">{{ $main->brand_mid_title }}</h2>
                 </div>
+
                 <div class="row g-4">
+
+                    @foreach ($brandlists as $brandlist)
+
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                    <i class="fa fa-user-tie fa-2x"></i>
+                                    <i class=" {{ $brandlist->icon }}"></i>
                                 </div>
 
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Benefits To The Business</h5>
-                               <p>1 It helps the business to build a long term brand.</p>
-<span>2 Sometimes help in building the overall market share in the short term as well.</p>
-<span>3 It reminds the loyal customers how well the brand has served them over the years and persuades their purchasing decision towards their branded products.
-</p>
+                                <h5 class="mb-3">{{ $brandlist->title }}</h5>
+                               {{-- {{ $brandlist->point1 }} --}}
+
+                               {!! $brandlist->point1  !!}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+
+                    @endforeach
+
+
+
+                    {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
@@ -185,7 +190,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                 </div>
@@ -201,13 +206,13 @@
 
 
 						<div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="{{ asset('assets/img/brand.png') }}">
+                        <img class="img-fluid" height="796" width="788" src="{{ $main->brand_footer_pic }}">
                     </div>
 
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 
-                        <h2 class="mb-4">How Brand Promotion Is Different From Product Promotion?</h2>
-                        <p class="mb-4">Brand promotion is a broader and long-term strategy where the firm makes an effort to build and maintain a brand image along with the trust of the buyers which helps them make their foundation, as a brand, stronger.  While promoting the brand, firms try to connect themselves to the audience by conveying some positive messages about their brand.</p>
+                        <h2 class="mb-4">{{ $main->brand_footer_title }}</h2>
+                        <p class="mb-4">{{ $main->brand_footer_subtitle }}</p>
 
 
 
@@ -226,24 +231,38 @@
         <div class="container-xxl py-6" id="process">
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                     <h2 class="mb-5">How Amazemantra works?</h2>
+                     <h2 class="mb-5">{{ $main->work_title }}</h2>
 
                 </div>
                 <div class="row g-4">
+
+                    @php
+                    $counter = 0;
+                    @endphp
+                    @foreach ($works as $item)
+                    @php
+                    $counter++;
+                    @endphp
+
+
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
                                 <div class="service-icon">
-                                  <p class="mb-0 " style="font-size:36px;"> 1 </p>
+                                  <p class="mb-0 " style="font-size:36px;"> {{ $counter }} </p>
                                 </div>
-
                             </div>
                             <div class="p-5">
-                                <h5 class="mb-3">Attract new customers</h5>
-                                <p>By influencing decisions of new customers in order to make them to invest in your product/service in the first place, which could have been a decision they would not have taken in the first place at all if not for the coupon</p>
+                                <h5 class="mb-3">{{ $item->title }}</h5>
+                                <p>{{ $item->description }}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+
+
+{{--
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">
@@ -273,7 +292,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
 
                 </div>
@@ -287,17 +306,25 @@
             <div class="container">
                 <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
 
-                    <h2 class="mb-5">Vouchers we offer</h2>
+                    <h2 class="mb-5">{{ $main->voucher_title }}</h2>
                 </div>
               <div class="row">
+
+                @foreach ($vouchers as $voucher)
+
+
+
 			    <div class="col-lg-6">
 				<div class="voucher-box">
-				  <h4>Ecommerce/Online</h4>
-				  <img src="{{ asset('assets/img/ecommerce.jpg') }}" class="img-fluid">
+				  <h4>{{ $voucher->title }}</h4>
+				  <img height="800" width="500" src="{{ $voucher->picture }}" class="img-fluid">
 				 </div>
 				</div>
 
-				 <div class="col-lg-6">
+                @endforeach
+
+
+				 {{-- <div class="col-lg-6">
 				<div class="voucher-box">
 				  <h4>Food Gift Cards</h4>
 				  <img src="{{ asset('assets/img/food.jpg') }}" class="img-fluid">
@@ -332,7 +359,7 @@
 				  <h4>Travel Gift Cards</h4>
 				  <img src="{{ asset('assets/img/travel.jpg') }}" class="img-fluid">
 				 </div>
-				</div>
+				</div> --}}
 
 			  </div>
             </div>
@@ -345,18 +372,19 @@
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-md-12 col-lg-12 text-center">
-                        <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p class="text-center"><i class="fa fa-map-marker-alt me-3"></i>Flat No. 3, Bhargav Apt 343/B,
-Shaniwar Peth, Pune,
-Maharashtra - 411030</p>
+                        <h5 class="text-white mb-4">{{ $main->contact_title }}</h5>
+                        <p class="text-center"><i class="fa fa-map-marker-alt me-3"></i>{{ $main->contact_location }}</p>
 
-                        <p class="text-center"><i class="fa fa-envelope me-3"></i>info@amazemantra.com</p>
+                        <p class="text-center"><i class="fa fa-envelope me-3"></i>{{ $main->contact_mail }}</p>
                         <div class="d-flex justify-content-center align-items-center pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            @foreach ($links as $link)
+                            <a class="btn  btn-social" href="{{ $link->link }}"><i class="{{ $link->icon }}"></i></a>
+
+                            @endforeach
+                            {{-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> --}}
                         </div>
                     </div>
 
@@ -368,7 +396,7 @@ Maharashtra - 411030</p>
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-12 text-center mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">AmazeMantra</a>, All Right Reserved
+                            &copy; <a class="border-bottom" href="#">{{ $main->website_name }}</a>, All Right Reserved
                         </div>
 
                     </div>
