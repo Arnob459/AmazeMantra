@@ -262,37 +262,7 @@
                     @endforeach
 
 
-{{--
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <p class="mb-0 " style="font-size:36px;"> 2 </p>
-                                </div>
 
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Retaining old customers</h5>
-                                                      <p>By bringing back the old customers in an attempt to retain them. People usually tend to be indifferent to the channel through which they can invest in a product/service, however, for the deal makers this is a brilliant opportunity to silently nudge the customer to take the same decision, but this time through the channel THEY decided</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                  <p class="mb-0 " style="font-size:36px;"> 3 </p>
-                                </div>
-
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Wake up customers</h5>
-                                 <p>For instance, if we compare Freecharge/Paytm/Mobikwik and other E-wallets, if a customer wants to pay his/her electricity bill what are the things he will be keeping in mind; can I pay through an app or a website? is this app too difficult to use? are there any coupons i can use as a first-timer? if not, then let s try going for another app</p>
-
-                            </div>
-                        </div>
-                    </div> --}}
 
 
                 </div>
@@ -324,42 +294,7 @@
                 @endforeach
 
 
-				 {{-- <div class="col-lg-6">
-				<div class="voucher-box">
-				  <h4>Food Gift Cards</h4>
-				  <img src="{{ asset('assets/img/food.jpg') }}" class="img-fluid">
-				 </div>
-				</div>
 
-
-				 <div class="col-lg-6">
-				<div class="voucher-box">
-				  <h4>hotels E Gift Cards</h4>
-				  <img src="{{ asset('assets/img/hotel.jpg') }}" class="img-fluid">
-				 </div>
-				</div>
-
-
-				 <div class="col-lg-6">
-				<div class="voucher-box">
-				  <h4>Lifestyle Gift Cards</h4>
-				  <img src="{{ asset('assets/img/lifestyle.jpg') }}" class="img-fluid">
-				 </div>
-				</div>
-
-				 <div class="col-lg-6">
-				<div class="voucher-box">
-				  <h4>Retail store Cards</h4>
-				  <img src="{{ asset('assets/img/retail.jpg') }}" class="img-fluid">
-				 </div>
-				</div>
-
-				 <div class="col-lg-6">
-				<div class="voucher-box">
-				  <h4>Travel Gift Cards</h4>
-				  <img src="{{ asset('assets/img/travel.jpg') }}" class="img-fluid">
-				 </div>
-				</div> --}}
 
 			  </div>
             </div>

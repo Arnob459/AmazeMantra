@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -46,6 +47,13 @@
 
     <link rel="stylesheet" href="{{asset('dashboard/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
 
+
+
+
+
+
+
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -91,100 +99,92 @@
               </li>
 
 
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-layout"></i>
                   <div data-i18n="Layouts">Layouts</div>
                 </a>
-            <ul class="menu-sub">
 
-              <li class="menu-item active">
+                <ul class="menu-sub">
+
+              <li class="menu-item ">
                 <a href="{{ route('admin.genaral.create') }}" class="menu-link">
                   <div data-i18n="Analytics">Genaral Setting</div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a href="{{ route('admin.home.create') }}" class="menu-link">
                   <div data-i18n="Analytics">Banner</div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a href="{{ route('admin.about.create') }}" class="menu-link">
                   <div data-i18n="Analytics">About</div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item ">
                 <a href="{{ route('admin.brand.create') }}" class="menu-link">
                   <div data-i18n="Analytics">Brand</div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item ">
                 <a href="{{ route('admin.work') }}" class="menu-link">
                   <div data-i18n="Analytics">Work</div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item ">
                 <a href="{{ route('admin.voucher') }}" class="menu-link">
                   <div data-i18n="Analytics">Voucher </div>
                 </a>
               </li>
 
-              <li class="menu-item active">
+              <li class="menu-item ">
                 <a href="{{ route('admin.contact') }}" class="menu-link">
                   <div data-i18n="Analytics">Contact </div>
                 </a>
               </li>
+                </ul>
+            </li>
 
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-layout"></i>
+              <div data-i18n="Layouts">Manage Users</div>
+            </a>
+                <ul class="menu-sub">
+
+                    <li class="menu-item ">
+                        <a href="{{ route('admin.manage.alluser') }}" class="menu-link">
+                        <div data-i18n="Analytics">All users</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item ">
+                        <a href="{{ route('admin.manage.activeuser') }}" class="menu-link">
+                        <div data-i18n="Analytics">Active users</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item ">
+                        <a href="{{ route('admin.manage.pendinguser') }}" class="menu-link">
+                        <div data-i18n="Analytics">Pending users</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item ">
+                        <a href="{{ route('admin.manage.emailverifiedusers') }}" class="menu-link">
+                        <div data-i18n="Analytics">Email verified users</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
         </ul>
-    </li>
-
-
-
-            {{-- <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">SubAdmins</span>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('addsubadmin')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Add SubAdmin</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('allsubadmins')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">All Sub Admin</div>
-              </a>
-            </li>
-
-            <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Orders</span>
-            </li>
-            <li class="menu-item">
-              <a href="{{route('pendingorder')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Pending Orders</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Completed Orders</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Cancel Orders</div>
-              </a>
-            </li>
-             --}}
-
-          </ul>
         </aside>
         <!-- / Menu -->
 
@@ -235,7 +235,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{asset('dashboard/assets/')}}img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{asset('dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -244,7 +244,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{asset('dashboard/assets/')}}img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{asset('dashboard/assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">

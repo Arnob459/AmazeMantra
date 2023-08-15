@@ -11,6 +11,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 
 use App\Http\Controllers\Admin\DashboardController ;
+use App\Http\Controllers\Admin\UserManageController ;
+
 use App\Http\Controllers\Admin\PagesController ;
 
 
@@ -58,7 +60,10 @@ Route::group(['prefix' => 'admin'],function(){
     });
     Route::middleware(['is_admin'])->group(function () {
         //Your routes here
-        Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
+        Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('admin.dashboard');
+
+        //Dynamic
+
         Route::get('/Homepage',[PagesController::class,'home'])->name('admin.homepage');
         Route::post('/Homepage',[PagesController::class,'updatehome'])->name('admin.updatehome');
 
@@ -83,7 +88,6 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('brandlist/edit/{id}',[PagesController::class,'BrandListEdit'])->name('admin.brandlist.edit');
         Route::post('brandlist/update/{id}',[PagesController::class,'BrandListUpdate'])->name('admin.brandlist.update');
         Route::get('brandlist/delete/{id}',[PagesController::class,'BrandListDelete'])->name('admin.brandlist.delete');
-
 
         //work
         Route::get('/work/new',[PagesController::class,'Work'])->name('admin.work');
@@ -114,6 +118,20 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('link/edit/{id}',[PagesController::class,'LinkEdit'])->name('admin.link.edit');
         Route::post('link/update/{id}',[PagesController::class,'LinkUpdate'])->name('admin.link.update');
         Route::get('link/delete/{id}',[PagesController::class,'LinkDelete'])->name('admin.link.delete');
+
+        //Dynamic End
+
+        //Manage users
+        Route::get('/manage/allusers',[UserManageController::class,'AllUsers'])->name('admin.manage.alluser');
+        Route::get('/manage/activeusers',[UserManageController::class,'ActiveUsers'])->name('admin.manage.activeuser');
+        Route::get('/manage/pendingusers',[UserManageController::class,'PendingUsers'])->name('admin.manage.pendinguser');
+        Route::get('/manage/emailverifiedusers',[UserManageController::class,'EmailVerifiedUsers'])->name('admin.manage.emailverifiedusers');
+
+        Route::get('manage/edit/{id}',[UserManageController::class,'UserDetails'])->name('admin.user.details');
+        Route::post('manage/update/{id}',[UserManageController::class,'UserDetailsUpdate'])->name('admin.user.detailsupdate');
+
+
+
 
 
         Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
