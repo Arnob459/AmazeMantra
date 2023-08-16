@@ -20,10 +20,15 @@
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                  @foreach ($inactive_users as $user)
-                  <tr>
-
-                    <td>{{ $user->id }}</td>
+                  @php
+                  $counter = 0;
+                  @endphp
+                @foreach ($inactive_users as $user)
+                @php
+                  $counter++;
+                @endphp
+                <tr>
+                  <td>{{ $counter }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->username }}</td>

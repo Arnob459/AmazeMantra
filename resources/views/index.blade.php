@@ -156,43 +156,6 @@
                     @endforeach
 
 
-
-                    {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-pie fa-2x"></i>
-                                </div>
-
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Benefits For Society</h5>
-                                                     <p>1 It provides employment.</p></br>
-<span>2 It activates the facility of mass production and hence lowers the cost.</p></br>
-<span>3 It leads to higher sales of the branded product which means higher tax revenue for the government and consequent growth of the economy.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-line fa-2x"></i>
-                                </div>
-
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3">Market Analysis</h5>
-                                <p>1 It educates the customers about the quality, quantity, price, use, and availability of their branded products.</p></br>
- <p>2 It saves the time and effort of the customer in making a purchasing decision as they are well informed.</p></br>
- <p>3 It gives them greater freedom of choice and prevents dishonest traders from exploiting them.</p>
-
-                            </div>
-                        </div>
-                    </div> --}}
-
-
                 </div>
             </div>
         </div>
@@ -235,7 +198,6 @@
 
                 </div>
                 <div class="row g-4">
-
                     @php
                     $counter = 0;
                     @endphp
@@ -243,9 +205,6 @@
                     @php
                     $counter++;
                     @endphp
-
-
-
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded h-100">
                             <div class="d-flex justify-content-between">

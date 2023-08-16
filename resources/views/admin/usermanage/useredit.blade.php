@@ -5,6 +5,8 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Details /</span> User</h4>
+                @include('alart.messages')
+
 
                 <div class="row">
                   <div class="col-md-12">
@@ -72,8 +74,9 @@
                             </div>
                             <div class="mb-3 col-md-6">
                               <label class="form-label" for="country">Country</label>
+                              {{-- <select class="selectpicker countrypicker"></select> --}}
                               <select id="country" name="country" class="select2 form-select">
-                                <option value="{{ $user->country }}"> select/{{ $user->country }}</option>
+                                <option value="{{ $user->country }}"> {{ $user->country }}</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Belarus">Belarus</option>
@@ -98,6 +101,13 @@
                                 <option value="United Kingdom">United Kingdom</option>
                                 <option value="United States">United States</option>
                               </select>
+                            </div>
+
+                            <div class="mb-4 col-md-6">
+                            <div class=" form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" name="email_verified" id="email_verified" value="1" {{ ($user->email_verified) ? 'checked' : '' }}  />
+                                <label class="form-check-label" for="email_verified" >Email Verified</label>
+                              </div>
                             </div>
 
 

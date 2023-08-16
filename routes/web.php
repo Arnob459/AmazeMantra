@@ -62,6 +62,13 @@ Route::group(['prefix' => 'admin'],function(){
         //Your routes here
         Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('admin.dashboard');
 
+        Route::get('/edit/{id}',[DashboardController::class,'AdminDetails'])->name('admin.details');
+        Route::post('/update/{id}',[DashboardController::class,'AdminDetailsUpdate'])->name('admin.detailsupdate');
+
+        Route::get('/passedit/{id}',[DashboardController::class,'AdminPassDetails'])->name('admin.passdetails');
+        Route::post('/passupdate/{id}',[DashboardController::class,'AdminPassDetailsUpdate'])->name('admin.passdetailsupdate');
+
+
         //Dynamic
 
         Route::get('/Homepage',[PagesController::class,'home'])->name('admin.homepage');

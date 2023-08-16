@@ -56,9 +56,9 @@ class UserManageController extends Controller
 
         $this->validate($request, [
             'name' => 'required|string|max:50',
-            'email' => 'required|string|email|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'phone' => 'required|integer|min:10',
-            'username' => 'required|integer|min:8',
+            'username' => 'required|integer|digits:8|unique:users,username,' . $id,
         ]);
 
         $user = User::find($id);
@@ -71,9 +71,15 @@ class UserManageController extends Controller
         $user->zipcode = $request->zipcode;
         $user->country = $request->country;
 
+        $user->email_verified = $request->email_verified;
+
+        // dd($request->email_verified);
+
         $user->save();
 
-        return redirect()->route('admin.manage.alluser')->with('success','User Information Updated Successfully');
+        return redirect()->route('admin.user.details',$id)->with('success','User Information Updated Successfully');
+
+
     }
 
 }
